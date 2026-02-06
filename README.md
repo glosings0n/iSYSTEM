@@ -111,7 +111,9 @@ L'application initialise automatiquement le schéma suivant :
 ## 📄 Licence
 
 Propriété d'**iSYSTEM**.
-# isystem
 
 ---
-Par Georges Byona - (@glosings0n)
+## 👨‍💻 Développé par
+
+**Georges Byona** - Software Engineer & Tech Community Lead  
+Socials Handle: [@glosings0n](https://linktr.ee/glosings0n)
