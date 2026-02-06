@@ -1,6 +1,32 @@
 # 📱 iSYSTEM — Gestion de Ventes
 
+<p align="center">
+        <img src="assets/logo.png" alt="iSYSTEM Logo" width="120" />
+</p>
+
 **iSYSTEM** est une solution de gestion commerciale mobile conçue pour les revendeurs de produits électroniques en République Démocratique du Congo. L'application mise sur une esthétique minimaliste **Noir & Blanc**, une typographie **Quicksand** épurée et une robustesse technique grâce au stockage local **SQLite**.
+
+---
+
+<p align="center">
+        <a href="https://drive.google.com/file/d/1I36kU52D-R9Wv7N1DOemOubfJaNAst86/view?usp=drive_link">
+                <strong style="font-size:1.05rem">⬇️ DOWNLOAD APK (Android)</strong>
+        </a>
+</p>
+
+> ⚠️ Version de test — l'APK fournie est destinée aux tests. Elle peut contenir des bugs ou des comportements imprévus.
+
+---
+
+## 🔧 Tâches en cours / À finir
+
+- Implémenter la **déconnexion** complète de l'utilisateur (suppression en base et UI).
+- Lire et agréger les **données réelles du Dashboard** (CA, nombre de ventes, top produit) depuis la base locale.
+- Mettre en place la **synchronisation bidirectionnelle** avec une base en ligne (gestion des conflits, états `isSynced`).
+- Ajouter des **tests unitaires** et d'intégration pour `DatabaseHelper` et les providers critiques.
+- Gestion des erreurs réseau et reprise des synchronisations (retries, backoff).
+- Internationalisation (FR/EN) et gestion des formats monétaires locaux.
+- Ajouter les assets officiels (logo, icônes) et vérifier le chargement des polices sur toutes les plateformes.
 
 ---
 
