@@ -1,4 +1,4 @@
-# 📱 iSYSTEM — Gestion de Ventes RDC
+# 📱 iSYSTEM — Gestion de Ventes
 
 **iSYSTEM** est une solution de gestion commerciale mobile conçue pour les revendeurs de produits électroniques en République Démocratique du Congo. L'application mise sur une esthétique minimaliste **Noir & Blanc**, une typographie **Quicksand** épurée et une robustesse technique grâce au stockage local **SQLite**.
 
@@ -8,7 +8,7 @@
 
 ### 📊 Tableau de Bord Intelligent
 - **Accueil Personnalisé** : Salutations automatiques en français (*Bonjour, Bon après-midi, Bonsoir*) basées sur l'heure système.
-- **Indicateurs de Performance** : Vue rapide sur le volume de ventes et l'état de la base de données.
+- **Indicateurs de Performance** : Vue d'ensemble du volume de ventes et de l'état de la base de données.
 
 ### 💸 Terminal de Vente (POS)
 - **Catalogue iSYSTEM** : Sélection fluide parmi 10 modèles de smartphones populaires en RDC (iPhone, Samsung, Tecno, Infinix, etc.).
@@ -47,8 +47,8 @@
 
 ### 2. Récupération du projet
 ```bash
-git clone https://github.com/votre-username/isystem.git
-cd isystem
+git clone https://github.com/glosings0n/iSYSTEM.git
+cd iSYSTEM
 ```
 
 ### 3. Gestion des Polices
@@ -74,25 +74,27 @@ flutter run
 ## 📁 Organisation des Dossiers
 
 ```text
+assets/      # Fonts et images locales
 lib/
-├── database/          # DatabaseHelper (Connexion et Requêtes SQL)
-├── models/            # Structures (User, Sale, Product)
-├── providers/         # Logique d'état (UserProvider, ThemeProvider)
-├── screens/           # Interface (Host, Dashboard, NewSale, SalesList)
-├── assets/            # Fonts et images locales
-└── main.dart          # Configuration initiale et Thèmes
+├── core/
+        ├── database/          # DatabaseHelper (Connexion et Requêtes SQL)
+        ├── models/            # Structures (UserModel, SaleModel, ProductModel)
+        ├── providers/         # Logique d'état (UserProvider, SalesProvider, ...)
+        ├── autres dossiers/   # Styles (Theme, Icons, ...)
+├── features/          # Interface (screens) (Host, Dashboard, NewSale, SalesList)
+└── main.dart          # Configuration initiale 
 
 ```
 
 ---
 
-## 🗄️ Structure de la Base de Données
+## 🗄️ Structure de la base de données
 
 L'application initialise automatiquement le schéma suivant :
 
 * **Table `users`** : Profil utilisateur et préférences.
 * **Table `products`** : Référentiel des prix et modèles.
-* **Table `sales`** : Registre complet des transactions avec ID unique.
+* **Table `sales`** : Registre complet des transactions, avec un ID unique.
 
 ---
 
@@ -108,7 +110,10 @@ L'application initialise automatiquement le schéma suivant :
 
 ## 📄 Licence
 
-Propriété de **iSYSTEM**. Distribué sous licence MIT.
-# isystem
+Propriété d'**iSYSTEM**.
 
-A new Flutter project.
+---
+## 👨‍💻 Développé par
+
+**Georges Byona** - Software Engineer & Tech Community Lead  
+Socials Handle: [@glosings0n](https://linktr.ee/glosings0n)
