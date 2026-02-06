@@ -9,7 +9,7 @@
 ---
 
 <p align="center">
-        <a href="https://drive.google.com/file/d/1I36kU52D-R9Wv7N1DOemOubfJaNAst86/view?usp=drive_link">
+        <a href="https://drive.google.com/file/d/1YxX8iie_XRDtqV7eWezfzl5F6NFSNMDh/view?usp=drive_link">
                 <strong style="font-size:1.05rem">⬇️ DOWNLOAD APK (Android)</strong>
         </a>
 </p>
