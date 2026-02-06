@@ -1,7 +1,7 @@
 # 📱 iSYSTEM — Gestion de Ventes
 
 <p align="center">
-        <img src="assets/logo.png" alt="iSYSTEM Logo" width="120" />
+        <img src="assets/images/logo.png" alt="iSYSTEM Logo" width="120" />
 </p>
 
 **iSYSTEM** est une solution de gestion commerciale mobile conçue pour les revendeurs de produits électroniques en République Démocratique du Congo. L'application mise sur une esthétique minimaliste **Noir & Blanc**, une typographie **Quicksand** épurée et une robustesse technique grâce au stockage local **SQLite**.
