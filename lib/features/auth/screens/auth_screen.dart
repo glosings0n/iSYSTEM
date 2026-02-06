@@ -81,37 +81,58 @@ class AuthScreen extends StatelessWidget {
                   }),
                 ),
               ),
-              FilledButton(
-                onPressed: () {
-                  if (authProvider.emailCtr.isNotEmpty &&
-                      !authProvider.emailCtr.contains("@")) {
-                    ScaffoldMessenger.of(
-                      context,
-                    ).showSnackBar(SnackBar(content: Text("Email incorrect")));
-                    return;
-                  }
-                  if (authProvider.nameCtr.isNotEmpty &&
-                      authProvider.emailCtr.isNotEmpty &&
-                      authProvider.passwordCtr.isNotEmpty) {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => HostScreen()),
-                    );
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text("Veuillez entrer toutes les valeurs"),
-                      ),
-                    );
-                  }
-                },
-                child: Text("Se connecter"),
-              ),
+              SizedBox(
+                width: 250,
+                height: 55,
+                child: FilledButton(
+                  onPressed: () async {
+                    if (authProvider.emailCtr.isNotEmpty &&
+                        !authProvider.emailCtr.contains("@")) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("Email incorrect")),
+                      );
+                      return;
+                    }
+                    if (authProvider.nameCtr.isNotEmpty &&
+                        authProvider.emailCtr.isNotEmpty &&
+                        authProvider.passwordCtr.isNotEmpty) {
+                      // Sauvegarde de l'utilisateur dans la base locale
+                      final userData = {
+                        'id': 1,
+                        'name': authProvider.nameCtr,
+                        'email': authProvider.emailCtr,
+                        'isDarkMode': 0,
+                      };
 
-              // ElevatedButton(
-              //   onPressed: () => context.read<GeneralProvider>().toggleTheme(),
-              //   child: const Text("Switch Theme"),
-              // ),
+                      await DatabaseHelper.instance.saveUser(userData);
+
+                      // Récupérer l'utilisateur courant depuis la BDD
+                      final current = await DatabaseHelper.instance.getUser();
+                      if (context.mounted) {
+                        if (current != null) {
+                          // Mettre à jour le UserProvider pour l'app
+                          context.read<UserProvider>().setUser(
+                            current['name'] as String,
+                            current['email'] as String,
+                          );
+                        }
+
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => HostScreen()),
+                        );
+                      }
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Veuillez entrer toutes les valeurs"),
+                        ),
+                      );
+                    }
+                  },
+                  child: Text("Se connecter"),
+                ),
+              ),
             ],
           ),
         ),

@@ -84,7 +84,7 @@ class DatabaseHelper {
     return await db.delete('sales', where: 'id = ?', whereArgs: [id]);
   }
 
-  // Ajoute ces méthodes à l'intérieur de ta classe DatabaseHelper
+  // --- OPÉRATIONS CRUD POUR L'UTILISATEUR ---
 
   // 1. Sauvegarder ou mettre à jour l'utilisateur unique (ID = 1)
   Future<int> saveUser(Map<String, dynamic> userData) async {
@@ -113,7 +113,7 @@ class DatabaseHelper {
     return null;
   }
 
-  // 3. (Optionnel) Supprimer l'utilisateur/Déconnexion
+  // 3. Supprimer l'utilisateur/Déconnexion
   Future<int> deleteUser() async {
     final db = await instance.database;
     return await db.delete('users');

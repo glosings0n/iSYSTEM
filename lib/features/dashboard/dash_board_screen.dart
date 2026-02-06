@@ -8,7 +8,9 @@ class DashBoardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userName = context.read<AuthProvider>().nameCtr;
+    final userName = context.watch<UserProvider>().name.isNotEmpty
+        ? context.watch<UserProvider>().name
+        : context.read<AuthProvider>().nameCtr;
     final dateOfToday = DateTime.now();
     final frenchMonths = [
       'Janvier',
@@ -34,9 +36,9 @@ class DashBoardScreen extends StatelessWidget {
       'Dimanche',
     ];
     String formattedDateFr =
-        "${frenchWeekdays[dateOfToday.weekday - 1]}, " +
-        "${dateOfToday.day.toString().padLeft(2, '0')} " +
-        "${frenchMonths[dateOfToday.month - 1]} " +
+        "${frenchWeekdays[dateOfToday.weekday - 1]}, "
+        "${dateOfToday.day.toString().padLeft(2, '0')} "
+        "${frenchMonths[dateOfToday.month - 1]} "
         "${dateOfToday.year}";
 
     final menusLabels = [
